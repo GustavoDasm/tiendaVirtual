@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { PlataformaComponent } from './plataforma/plataforma.component';
+import { PlataformaComponent } from './pages/plataforma/plataforma.component';
+
 
 @Component({
   selector: 'app-root',

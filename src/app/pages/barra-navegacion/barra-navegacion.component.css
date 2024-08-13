@@ -1,0 +1,34 @@
+.logo{
+    width: 40px;
+    height: 40px;
+}
+
+.titulo-logo{
+    font-family: "Kaushan Script", sans-serif, Arial;
+    font-weight: 400;
+    font-style: normal;
+    transition: text-shadow 0.3s ease;
+}
+
+a{
+    text-decoration: none;
+    font-family: "Roboto", sans-serif, Arial;
+    font-weight: 400;
+    font-style: normal;
+}
+
+a:hover{
+    text-shadow: 0.1em 0.1em 0.4em rgb(253, 253, 253);
+}
+
+.form-control:focus {
+    border-color: transparent; 
+    box-shadow: none; 
+}
+
+
+
+
+
+
+

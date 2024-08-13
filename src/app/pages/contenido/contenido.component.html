@@ -1,0 +1,17 @@
+<div class="bg-light p-3 d-flex">
+  <app-barra-lateral></app-barra-lateral>
+  <div class="contenedor">
+    @for(producto of productos; track producto){
+      <div class="card border-0">
+        <a (click)="abrirModalDetallesProducto(producto)">
+          <img src="{{producto.imagen}}" class="card-img-top" alt="Laptop">
+          <div class="card-body">
+            <h5 class="card-title">{{producto.nombre}}</h5>
+            <p class="card-text">{{producto.descripcion}}</p>
+            <p class="text-danger"><strong>S/{{producto.precio}}</strong></p>
+          </div>
+        </a>
+      </div>
+    }
+  </div>
+</div>

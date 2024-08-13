@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { BarraNavegacionComponent } from './barra-navegacion/barra-navegacion.component';
-import { ContenidoComponent } from './contenido/contenido.component';
+import { BarraNavegacionComponent } from '../barra-navegacion/barra-navegacion.component';
+import { ContenidoComponent } from '../contenido/contenido.component';
+
 
 @Component({
   selector: 'app-plataforma',
@@ -10,5 +11,5 @@ import { ContenidoComponent } from './contenido/contenido.component';
   styleUrl: './plataforma.component.css'
 })
 export class PlataformaComponent {
-
+  
 }

@@ -1,0 +1,11 @@
+
+.accordion-button {
+    background-color: #ffffff; 
+    transition: background-color 0.5s ease; 
+    outline: none; 
+    box-shadow: none; 
+}
+
+.accordion-body{
+    padding: 1em 2em 0 2em;
+}
