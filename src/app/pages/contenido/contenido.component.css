@@ -4,10 +4,8 @@ a{
 }
 
 app-barra-lateral {
-    width: 22em; 
-    height: 100vh; 
+    width: 20em; 
     padding: 20px; 
-    
 }
 
 .contenedor{
@@ -19,4 +17,8 @@ app-barra-lateral {
 
 .contenido{
     padding: 20px;
+}
+
+.card{
+    box-shadow: 0 0.1em 0.4em rgba(0, 0, 0, 0.199);
 }

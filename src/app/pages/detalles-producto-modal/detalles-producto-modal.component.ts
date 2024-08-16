@@ -1,0 +1,25 @@
+import { Component, Inject } from '@angular/core';
+import { BarraNavegacionComponent } from '../barra-navegacion/barra-navegacion.component';
+import { Producto } from '../../interfaces/producto';
+import { MAT_DIALOG_DATA, MatDialogRef, MatDialog } from '@angular/material/dialog';
+
+
+@Component({
+  selector: 'app-detalles-producto',
+  standalone: true,
+  imports: [BarraNavegacionComponent],
+  templateUrl: './detalles-producto-modal.component.html',
+  styleUrl: './detalles-producto-modal.component.css'
+})
+export class DetallesProductoModalComponent {
+  producto: Producto = {} as Producto;
+
+  constructor(
+    public dialogRef: MatDialogRef<DetallesProductoModalComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: Producto) {
+    this.producto = data
+  }
+  cerrar() {
+    this.dialogRef.close();
+  }
+}

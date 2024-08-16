@@ -1,3 +1,7 @@
+.nav-container {
+    overflow-x: hidden; /* Evita el desbordamiento horizontal */
+}
+
 .logo{
     width: 40px;
     height: 40px;

@@ -1,0 +1,16 @@
+img {
+    width: 15em;
+    height: 15em;
+}
+
+h2 {
+    
+    text-decoration: none;
+    font-family: "Roboto", sans-serif, Arial;
+    font-weight: 400;
+    font-style: normal;
+}
+
+section{
+    background-color: white;
+}

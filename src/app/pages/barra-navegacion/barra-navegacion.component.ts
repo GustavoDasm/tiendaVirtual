@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Producto } from '../../interfaces/producto';
 
 @Component({
   selector: 'app-barra-navegacion',
@@ -8,5 +9,11 @@ import { Component } from '@angular/core';
   styleUrl: './barra-navegacion.component.css'
 })
 export class BarraNavegacionComponent {
+  frase: string = "Donde la imaginación se convierte en código y cada línea construye un nuevo mundo"
+/*   @Input() carrito: Producto[] = []; */
+  productos: Producto[] = [];
 
+  agregarAlCarrito(producto: Producto) {
+    this.productos.push(producto);
+  } 
 }
