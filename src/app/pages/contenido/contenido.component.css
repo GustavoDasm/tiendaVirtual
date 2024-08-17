@@ -15,10 +15,10 @@ app-barra-lateral {
     flex-grow: 1;
 }
 
-.contenido{
-    padding: 20px;
-}
-
 .card{
     box-shadow: 0 0.1em 0.4em rgba(0, 0, 0, 0.199);
+}
+
+img{
+    height: 10em;
 }

@@ -1,5 +1,7 @@
-import { Component, Input } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Producto } from '../../interfaces/producto';
+import { CarritoService } from '../../services/carrito.service';
+
 
 @Component({
   selector: 'app-barra-navegacion',
@@ -10,10 +12,10 @@ import { Producto } from '../../interfaces/producto';
 })
 export class BarraNavegacionComponent {
   frase: string = "Donde la imaginación se convierte en código y cada línea construye un nuevo mundo"
-/*   @Input() carrito: Producto[] = []; */
-  productos: Producto[] = [];
+  productosCarrito: Producto[] = [];
+  carritoService = inject(CarritoService)
 
-  agregarAlCarrito(producto: Producto) {
-    this.productos.push(producto);
+  mostrarProductosCarrito(): void{
+    this.productosCarrito = this.carritoService.obtenerProductos();
   } 
 }

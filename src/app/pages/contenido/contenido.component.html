@@ -5,10 +5,10 @@
     <div class="card border">
       <!--[routerLink]="['detalles-producto']" or (click)="abrirModalDetallesProducto(producto)"  -->
       <div class="container d-flex flex-column h-100">
-        <div class="p-4">
-          <img class="img-fluid" src="{{producto.imagen}}" class="card-img-top" alt="Laptop">
+        <div class="contenedor-img p-4 m-auto">
+          <img class="img-fluid" src="{{producto.imagen}}" alt="Laptop">
         </div>
-        <div class="card-body py-3 px-1 d-flex flex-column justify-content-end">
+        <div class="card-body p-0 pb-2 d-flex flex-column justify-content-end">
           <h6 class="card-title">{{producto.nombre}}</h6>
           <p class="card-text">{{producto.descripcion}}</p>
           <p class="text-dark"><strong><del>S/{{producto.precio}}</del></strong></p>

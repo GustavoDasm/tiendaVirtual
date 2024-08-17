@@ -1,4 +1,4 @@
-<section class="d-flex  justify-content-between align-items-center bg-dark p-4">
+<section class="d-flex justify-content-between align-items-center bg-dark p-4">
   <div class="d-flex align-items-center">
     <img class="logo" src="assets/logo.png" alt="">
     <h3 class="titulo-logo text-light m-0 px-2">CodeCrafters DG</h3>
@@ -9,8 +9,8 @@
   </div>
   <div class="d-flex gap-3">
     <a href="#" class="text-light ">Iniciar Sesión</a>
-    <a class="text-light" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button"
-      aria-controls="offcanvasExample">
+    <a class="text-light" data-bs-toggle="offcanvas" href="#offcanvasExample" (click)="mostrarProductosCarrito()"
+      role="button" aria-controls="offcanvasExample">
       Carrito
     </a>
     <a href="#" class="text-light ">Menú</a>
@@ -21,16 +21,23 @@
       <h5 class="offcanvas-title" id="offcanvasExampleLabel">Tus Compras</h5>
       <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
-    <div class="offcanvas-body">
-      @for(producto of productos; track producto){
+    <div class="offcanvas-body d-flex flex-column gap-2 ">
+      @for(producto of productosCarrito; track producto){
         @if(producto.id){
+        
+        <div class="contenedor d-flex justify-content-end align-items-center gap-2 border rounded p-2">
           <div>
-            <img src="{{producto.imagen}}" alt="{{producto.nombre}}" class="img-fluid">
-            <h6>{{producto.nombre}}</h6>
-            <p>S/{{producto.precio}}</p>  
+            1
           </div>
+          <div class="w-50">
+            <img class="img-fluid p-2" src="{{producto.imagen}}" alt="{{producto.nombre}}">
+          </div>
+          <div>
+            <p class="fs-6">{{producto.descripcion}}</p>
+            <p>S/{{producto.precio}}</p>
+          </div>
+        </div>
         }
-
       }
     </div>
   </div>
