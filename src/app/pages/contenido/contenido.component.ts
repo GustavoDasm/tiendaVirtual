@@ -28,6 +28,7 @@ export class ContenidoComponent {
       precio: 2899,
       precioPromocion: 2699,
       imagen: 'assets/GamingLaptop.png',
+      cantidadPedido: 0,
     },
     {
       id: 2,
@@ -37,6 +38,7 @@ export class ContenidoComponent {
       precio: 3299,
       precioPromocion: 3099,
       imagen: 'assets/HPOmen15.jpg',
+      cantidadPedido: 0,
     },
     {
       id: 3,
@@ -46,6 +48,7 @@ export class ContenidoComponent {
       precio: 2799,
       precioPromocion: 2599,
       imagen: 'assets/DellG5.jpg',
+      cantidadPedido: 0,
     },
     {
       id: 4,
@@ -55,6 +58,7 @@ export class ContenidoComponent {
       precio: 3599,
       precioPromocion: 3299,
       imagen: 'assets/ASUSROG.jpg',
+      cantidadPedido: 0,
     },
     {
       id: 5,
@@ -64,6 +68,7 @@ export class ContenidoComponent {
       precio: 2999,
       precioPromocion: 2799,
       imagen: 'assets/AcerPredator.jpg',
+      cantidadPedido: 0,
     },
     {
       id: 6,
@@ -72,7 +77,8 @@ export class ContenidoComponent {
       descripcion: 'HP Pavilion x360, Intel Core i5, 8GB RAM, 256GB SSD',
       precio: 999,
       precioPromocion: 899,
-      imagen: 'assets/HP-Pavilion.jpg'
+      imagen: 'assets/HP-Pavilion.jpg',
+      cantidadPedido: 0,
     },
     {
       id: 7,
@@ -81,7 +87,8 @@ export class ContenidoComponent {
       descripcion: 'Lenovo ThinkPad X1 Carbon, Intel i7, 16GB RAM, 512GB SSD',
       precio: 1399,
       precioPromocion: 1299,
-      imagen: 'assets/Lenovo_ThinkPad.jpg'
+      imagen: 'assets/Lenovo_ThinkPad.jpg',
+      cantidadPedido: 0,
     },
     {
       id: 8,
@@ -90,7 +97,8 @@ export class ContenidoComponent {
       descripcion: 'MSI GE76 Raider, Intel i9, NVIDIA RTX 3080, 32GB RAM',
       precio: 3999,
       precioPromocion: 3799,
-      imagen: 'assets/MSI_GE76_Raider.jpg'
+      imagen: 'assets/MSI_GE76_Raider.jpg',
+      cantidadPedido: 0,
     },
     {
       id: 9,
@@ -99,7 +107,8 @@ export class ContenidoComponent {
       descripcion: 'Razer Blade 15, Intel i7, NVIDIA RTX 3070, 16GB RAM',
       precio: 3299,
       precioPromocion: 3099,
-      imagen: 'assets/Razer_Blade_15.jpg'
+      imagen: 'assets/Razer_Blade_15.jpg',
+      cantidadPedido: 0,
     },
     {
       id: 10,
@@ -108,7 +117,8 @@ export class ContenidoComponent {
       descripcion: 'Apple MacBook Pro 16-inch, M1 Pro, 32GB RAM, 1TB SSD',
       precio: 2499,
       precioPromocion: 2399,
-      imagen: 'assets/Apple_MacBook_Pro.png'
+      imagen: 'assets/Apple_MacBook_Pro.png',
+      cantidadPedido: 0,
     }
 ];
 
@@ -121,6 +131,7 @@ export class ContenidoComponent {
   }
 
   agregarAlCarrito(producto: Producto): void{
+    producto.cantidadPedido++;
     this.carrito.agregarProducto(producto)
     alert("Producto "+ producto.nombre + " agregado")
   }

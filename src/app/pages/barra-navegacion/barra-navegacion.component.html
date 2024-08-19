@@ -22,13 +22,13 @@
       <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body d-flex flex-column gap-2 ">
-      @for(producto of productosCarrito; track producto){
-        @if(producto.id){
-        
-        <div class="contenedor d-flex justify-content-end align-items-center gap-2 border rounded p-2">
-          <div>
-            1
-          </div>
+      @for(producto of productosCarrito; track producto; let i = $index){
+        @if(verificarIdRepetido(producto.id)){
+        <div class="d-flex justify-content-end align-items-center gap-2 border rounded p-2">
+            <div>
+              {{ producto.cantidadPedido }}
+            </div>
+          
           <div class="w-50">
             <img class="img-fluid p-2" src="{{producto.imagen}}" alt="{{producto.nombre}}">
           </div>
@@ -39,6 +39,10 @@
         </div>
         }
       }
+    </div>
+    <div>
+      <h4>S/{{obtenerTotal}}</h4>
+
     </div>
   </div>
 </section>

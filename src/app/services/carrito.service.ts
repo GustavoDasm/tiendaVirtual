@@ -8,10 +8,13 @@ export class CarritoService {
   private productos: Producto[] = [];
 
   agregarProducto(producto: Producto): void {
+    
     this.productos.push(producto);
   }
 
   obtenerProductos(): Producto[] {
     return this.productos;
   }
+
+
 }

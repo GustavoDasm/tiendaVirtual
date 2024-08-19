@@ -6,4 +6,5 @@ export interface Producto {
     precio: number;
     precioPromocion: number;
     imagen: string;
+    cantidadPedido: number;
   }
