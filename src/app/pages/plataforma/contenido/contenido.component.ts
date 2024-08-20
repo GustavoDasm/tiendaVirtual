@@ -1,19 +1,21 @@
 import { Component, inject } from '@angular/core';
-import { BarraLateralComponent } from '../barra-lateral/barra-lateral.component';
-import { RouterLink, Router } from '@angular/router';
-import { Producto } from '../../interfaces/producto';
+import { Producto } from '../../../interfaces/producto';
 import { MatDialog } from '@angular/material/dialog';
+import { CarritoService } from '../../../services/carrito.service';
 import { DetallesProductoModalComponent } from '../detalles-producto-modal/detalles-producto-modal.component';
-import { BarraNavegacionComponent } from '../barra-navegacion/barra-navegacion.component';
-import { CarritoService } from '../../services/carrito.service';
+import { BarraLateralComponent } from '../barra-lateral/barra-lateral.component';
+
+
+
 
 @Component({
   selector: 'app-contenido',
   standalone: true,
-  imports: [BarraLateralComponent, RouterLink, BarraNavegacionComponent],
+  imports: [BarraLateralComponent],
   templateUrl: './contenido.component.html',
   styleUrl: './contenido.component.css'
 })
+
 export class ContenidoComponent {
 
   public dialog = inject(MatDialog)
@@ -28,7 +30,6 @@ export class ContenidoComponent {
       precio: 2899,
       precioPromocion: 2699,
       imagen: 'assets/GamingLaptop.png',
-      cantidadPedido: 0,
     },
     {
       id: 2,
@@ -38,7 +39,6 @@ export class ContenidoComponent {
       precio: 3299,
       precioPromocion: 3099,
       imagen: 'assets/HPOmen15.jpg',
-      cantidadPedido: 0,
     },
     {
       id: 3,
@@ -48,7 +48,6 @@ export class ContenidoComponent {
       precio: 2799,
       precioPromocion: 2599,
       imagen: 'assets/DellG5.jpg',
-      cantidadPedido: 0,
     },
     {
       id: 4,
@@ -58,7 +57,6 @@ export class ContenidoComponent {
       precio: 3599,
       precioPromocion: 3299,
       imagen: 'assets/ASUSROG.jpg',
-      cantidadPedido: 0,
     },
     {
       id: 5,
@@ -68,7 +66,6 @@ export class ContenidoComponent {
       precio: 2999,
       precioPromocion: 2799,
       imagen: 'assets/AcerPredator.jpg',
-      cantidadPedido: 0,
     },
     {
       id: 6,
@@ -78,7 +75,6 @@ export class ContenidoComponent {
       precio: 999,
       precioPromocion: 899,
       imagen: 'assets/HP-Pavilion.jpg',
-      cantidadPedido: 0,
     },
     {
       id: 7,
@@ -88,7 +84,6 @@ export class ContenidoComponent {
       precio: 1399,
       precioPromocion: 1299,
       imagen: 'assets/Lenovo_ThinkPad.jpg',
-      cantidadPedido: 0,
     },
     {
       id: 8,
@@ -98,7 +93,6 @@ export class ContenidoComponent {
       precio: 3999,
       precioPromocion: 3799,
       imagen: 'assets/MSI_GE76_Raider.jpg',
-      cantidadPedido: 0,
     },
     {
       id: 9,
@@ -108,7 +102,6 @@ export class ContenidoComponent {
       precio: 3299,
       precioPromocion: 3099,
       imagen: 'assets/Razer_Blade_15.jpg',
-      cantidadPedido: 0,
     },
     {
       id: 10,
@@ -118,7 +111,6 @@ export class ContenidoComponent {
       precio: 2499,
       precioPromocion: 2399,
       imagen: 'assets/Apple_MacBook_Pro.png',
-      cantidadPedido: 0,
     }
 ];
 
@@ -130,9 +122,8 @@ export class ContenidoComponent {
     console.log(producto)
   }
 
-  agregarAlCarrito(producto: Producto): void{
-    producto.cantidadPedido++;
-    this.carrito.agregarProducto(producto)
-    alert("Producto "+ producto.nombre + " agregado")
+  agregarAlCarrito(producto: Producto): void {
+    this.carrito.agregarProducto(producto);
+    alert("Producto " + producto.nombre + " agregado al carrito");
   }
 }

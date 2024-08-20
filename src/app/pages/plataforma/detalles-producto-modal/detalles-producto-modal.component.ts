@@ -1,7 +1,7 @@
 import { Component, Inject } from '@angular/core';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { BarraNavegacionComponent } from '../barra-navegacion/barra-navegacion.component';
-import { Producto } from '../../interfaces/producto';
-import { MAT_DIALOG_DATA, MatDialogRef, MatDialog } from '@angular/material/dialog';
+import { Producto } from '../../../interfaces/producto';
 
 
 @Component({

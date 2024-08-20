@@ -9,3 +9,7 @@
 .accordion-body{
     padding: 1em 2em 0 2em;
 }
+
+h6{
+    margin: 0;
+}
