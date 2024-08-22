@@ -1,0 +1,12 @@
+.contenedor-productos{
+    background-color: white;
+    box-shadow: 0 0.1em 0.4em rgba(0, 0, 0, 0.199);
+}
+
+img{
+    height: 7em;
+}
+
+p{
+    margin: 0;
+}

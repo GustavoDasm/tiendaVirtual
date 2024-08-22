@@ -2,12 +2,13 @@ import { Component, inject, OnInit } from '@angular/core';
 import { Producto } from '../../../interfaces/producto';
 import { CarritoService } from '../../../services/carrito.service';
 import { Carrito } from '../../../interfaces/carrito';
+import { RouterLink } from '@angular/router';
 
 
 @Component({
   selector: 'app-barra-navegacion',
   standalone: true,
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './barra-navegacion.component.html',
   styleUrl: './barra-navegacion.component.css'
 })
@@ -31,18 +32,21 @@ export class BarraNavegacionComponent implements OnInit{
   mostrarProductosCarrito(): void {
     this.productosCarrito = this.carritoService.obtenerCarrito();
     this.mostrarPrecioTotal()
-    this.mostrarCantidadTotal()
   }
 
   mostrarPrecioTotal():void{
     this.precioTotal = this.carritoService.obtenerPrecioTotal();
+    this.mostrarCantidadTotal()
   }
 
   mostrarCantidadTotal(): void{
     this.cantidadTotal = this.carritoService.obtenerCantidadTotal();
   }
 
-  
+  eliminarDelCarrito(producto: Producto) {
+    this.carritoService.eliminarProducto(producto);
+    this.mostrarProductosCarrito();
+  }
 
 /*   obtenerTotal(): void {
     for (let i = 0; i < this.productosCarrito.length; i++) {

@@ -41,4 +41,8 @@ export class CarritoService {
       })
     return cantidadTotal
   }
+
+  eliminarProducto(producto: Producto): void {
+    this.carrito = this.carrito.filter(item => item.producto.id !== producto.id);
+  }
 }
