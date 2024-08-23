@@ -26,7 +26,7 @@ export class BarraNavegacionComponent implements OnInit{
   }
 
   carritoVacio(): boolean{
-    return this.carritoService.obtenerCantidadTotal() == 0
+    return this.carritoService.obtenerCantidadTotal() === 0
   }
 
   mostrarProductosCarrito(): void {
@@ -48,6 +48,15 @@ export class BarraNavegacionComponent implements OnInit{
     this.mostrarProductosCarrito();
   }
 
+  aumentarCantidad(producto: Producto){
+    this.carritoService.aumentarCantidadProducto(producto)
+    this.mostrarProductosCarrito()
+  }
+
+  disminuirCantidad(producto: Producto){
+    this.carritoService.disminuirCantidadProducto(producto)
+    this.mostrarProductosCarrito()
+  }
 /*   obtenerTotal(): void {
     for (let i = 0; i < this.productosCarrito.length; i++) {
       let producto = this.productosCarrito[i];

@@ -29,8 +29,10 @@
       } @else {
         @for(producto of productosCarrito; track producto; let i = $index){
         <div class="d-flex justify-content-end align-items-center gap-2 border rounded p-2">
-          <div>
-            {{producto.cantidad}}
+          <div class="d-flex flex-column align-items-center">
+            <button class="btn text-secondary" (click)="aumentarCantidad(producto.producto)"><h6>+</h6></button>
+            <p>{{producto.cantidad}}</p>
+            <button class="btn text-secondary" (click)="disminuirCantidad(producto.producto)"><h6>-</h6></button> 
           </div>
           <div class="w-50">
             <img class="img-fluid p-2" src="{{producto.producto.imagen}}" alt="{{producto.producto.nombre}}">

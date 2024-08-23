@@ -7,6 +7,19 @@ img{
     height: 7em;
 }
 
-p{
+p, h6{
     margin: 0;
 }
+
+a{
+    text-decoration: none;
+}
+
+/* .progress{
+    position: absolute;
+} */
+
+.circle{
+    position: relative;
+}
+
