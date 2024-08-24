@@ -16,29 +16,37 @@
         </div>
 
     </div>
-    <div class="d-flex justify-content-center gap-3 mx-5">
-        <div class="d-flex flex-column">
-            <h6 class="mb-3"><strong>Tus Productos Seleccionados</strong></h6>
-            <div class="px-4 py-3 contenedor-productos rounded">
+    <div class="row gap-3 mx-5">
+        <div class="col-8">
+            <h6 class="mb-3 mx-3"><strong>Tus Productos Seleccionados</strong></h6>
+            <div class="mx-5 px-5 py-3 contenedor-productos rounded">
             @if(carritoService.obtenerCantidadTotal() == 0){
-                <div class="m-auto">
-                    <p>No tienes productos agregados</p>
+                <div class="p-5 m-auto">
+                    <p class="text-center">No tienes productos agregados</p>
                 </div>
             } @else {
                 @for(producto of carritoService.obtenerCarrito(); track producto; let i = $index){
                     <div class="row mt-3 pb-3 border-bottom ">
-                        <div class="col">
+                        <div class="col text-center">
                             <img class="img-fluid" src="{{producto.producto.imagen}}" alt="{{producto.producto.nombre}}">
                         </div>
                         <div class="col">
                             <strong>
                                 <p class="fs-6">{{producto.producto.descripcion}}</p>
-                                <p>Cantidad: {{producto.cantidad}}</p>
+                                <div class="d-flex align-items-center">                                                     
+                                    <button class="btn text-secondary" (click)="disminuirCantidad(producto.producto)"><h6>-</h6></button> 
+                                    <p>{{producto.cantidad}}</p>
+                                    <button class="btn text-secondary" (click)="aumentarCantidad(producto.producto)"><h6>+</h6></button>
+                                </div>                              
+                            </strong>
+
+
+                        </div>
+                        <div class="col text-end">   
+                            <strong>
                                 <p>Precio: <del>S/{{producto.producto.precio}}</del></p>
                                 <p><span class="text-danger">Descuento: S/{{producto.producto.precioPromocion}}</span></p>
                             </strong>
-                        </div>
-                        <div class="col">
                             <button class="btn-eliminar btn border-0" (click)="carritoService.eliminarProducto(producto.producto)">
                                 <i class="bi bi-trash-fill"></i>
                             </button>
@@ -49,7 +57,7 @@
             </div>
         </div>
    
-        <div class="">
+        <div class="col-3">
             <h6 class="mb-3"><strong>Resumen de la orden</strong></h6>
             <div class="d-flex flex-column contenedor-productos rounded p-3">
                 <div class="border-bottom pb-2">
