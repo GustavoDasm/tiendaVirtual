@@ -22,27 +22,47 @@ export class CarritoService {
     }
   }
 
-  obtenerCarrito(): Carrito[]{
+  obtenerCarrito(): Carrito[] {
     return this.carrito
   }
 
-  obtenerPrecioTotal(): number{
+  obtenerPrecioTotal(): number {
     let precioTotal = 0
-    this.obtenerCarrito().forEach(item =>{
+    this.obtenerCarrito().forEach(item => {
       precioTotal += item.producto.precio * item.cantidad
     })
     return precioTotal
   }
 
-  obtenerCantidadTotal(): number{
+  obtenerCantidadTotal(): number {
     let cantidadTotal = 0
-    this.obtenerCarrito().forEach(item =>{
+    this.obtenerCarrito().forEach(item => {
       cantidadTotal += item.cantidad
-      })
+    })
     return cantidadTotal
   }
 
   eliminarProducto(producto: Producto): void {
     this.carrito = this.carrito.filter(item => item.producto.id !== producto.id);
+
+  }
+
+  aumentarCantidadProducto(producto: Producto): void {
+    this.obtenerCarrito().forEach(item => {
+      if (item.producto.id === producto.id) {
+        item.cantidad++
+      }
+    })
+  }
+
+  disminuirCantidadProducto(producto: Producto): void {
+    this.obtenerCarrito().forEach(item => {
+      if (item.producto.id === producto.id) {
+        item.cantidad--
+      }
+      if (item.cantidad === 0) {
+        this.carrito = this.carrito.filter(item => item.producto.id !== producto.id);
+      }
+    })
   }
 }
