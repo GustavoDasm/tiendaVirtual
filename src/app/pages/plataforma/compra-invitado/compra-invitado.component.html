@@ -2,27 +2,99 @@
     <h3 class="text-center">Compra Invitado</h3>
     <div class="m-5">
         <div class="progress">
-            <div class="bg-dark progress-bar w-50" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+            <div class="bg-dark progress-bar w-50" role="progressbar" aria-valuenow="75" aria-valuemin="0"
+                aria-valuemax="100">
             </div>
         </div>
     </div>
 
-    <div class="row mx-5">
-        <div class="col">
+    @if(this.formulario){
+    <div class="row mx-4">
+        <div class="col-md-8">
             <div>
                 <h6><strong>Datos de Envío</strong></h6>
-                <div class="my-3">
-                    <button class="botones border btn"><i class="fs-4 bi bi-shop"></i><strong>  Recojo en Tienda</strong></button>
-                    <button class="botones border btn"><i class="fs-4 bi bi-send-check"></i><strong>  Envío a Domicilio</strong></button>
+                <div class="my-3 row gap-4">
+                    <button class="botones border btn col p-2"><i class="fs-4 bi bi-shop"></i><strong> Recojo en Tienda</strong></button>
+                    <button class="botones border btn col p-2"><i class="fs-4 bi bi-send-check"></i><strong> Envío a Domicilio</strong></button>
                 </div>
                 <p><strong>Elija la Tienda de Entrega</strong></p>
-            </div>
-            <div>
-                <p>Formas de pago: </p>
+                <div class="d-flex flex-column gap-2">
+                    <div class="radio border rounded p-3">
+                        <input type="radio" name="RadioChina" id="radioChina">
+                        <label class="mx-3" for="radioChina"> China - Tokio</label>
+                    </div>
+                    <div class="radio border rounded p-3">
+                        <input type="radio" name="RadioIca" id="radioIca">
+                        <label class="mx-3" for="radioIca"> Perú - Ica</label>
+                    </div>
+                </div>
+
             </div>
         </div>
-        <div class="col">
-            <p><strong>Total</strong></p>
+        <div class="col-md-3 mx-auto">
+            <h6 class="mb-3"><strong>Resumen de la orden</strong></h6>
+            <div class="d-flex flex-column contenedor-productos rounded p-3">
+                <div class="border-bottom pb-2">
+                    <p>Productos({{carritoService.obtenerCantidadTotal()}})</p>
+                </div>
+                <div class="border-bottom py-2">
+                    <p>Total: S/{{carritoService.obtenerPrecioTotal()}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    } @else {
+    <div class="mx-4 row">
+        <div class="col-md-8">
+            <h6><strong>Completa el Formulario</strong></h6>
+            <form class="d-flex flex-column gap-3" (ngSubmit)="verificarForm()">
+                <div class="row">
+                  <div class="form-group col-md-6">
+                    <label for="inputNombres">Nombres</label>
+                    <input type="text" class="form-control" name="nombres" id="inputNombres" [(ngModel)]="invitado.nombres" required>
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="inputApellidos">Apellidos</label>
+                    <input type="text" class="form-control" name="apellidos" id="inputApellidos" [(ngModel)]="invitado.apellidos" required>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="form-group col-md-6">
+                    <label for="inputDni">Dni</label>
+                    <input type="text" class="form-control" name="dni" id="inputDni" [(ngModel)]="invitado.dni" required>
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="inputTelefono">Teléfono</label>
+                    <input type="text" class="form-control" name="telefono" id="inputTelefono" [(ngModel)]="invitado.telefono" required>
+                  </div>
+                </div>
+                <div class="row">   
+                    <div class="form-group col-md-6">
+                      <label for="inputCorreo">Correo Electrónico</label>
+                      <input type="text" class="form-control" name="correo" id="inputCorreo" [(ngModel)]="invitado.correo" required>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-dark my-3"><strong>Ingresar</strong></button>
+            </form>
+        </div>
+
+        <div class="col-md-3 mx-auto">
+            <h6 class="mb-3"><strong>Resumen de la orden</strong></h6>
+            <div class="d-flex flex-column contenedor-productos rounded p-3">
+                <div class="border-bottom pb-2">
+                    <p>Productos({{carritoService.obtenerCantidadTotal()}})</p>
+                </div>
+                <div class="border-bottom py-2">
+                    <p>Total: S/{{carritoService.obtenerPrecioTotal()}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    }
+    <div class="mx-5">
+        <div>
+            <p>Formas de Pago: </p>
+            <a routerLink="/plataforma/contenido">Seguir comprando</a>
         </div>
     </div>
 </div>
