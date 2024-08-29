@@ -5,9 +5,11 @@ import { PlataformaComponent } from './pages/plataforma/plataforma.component';
 import { ContenidoComponent } from './pages/plataforma/contenido/contenido.component';
 import { PasarelaPagosComponent } from './pages/plataforma/pasarela-pagos/pasarela-pagos.component';
 import { CompraInvitadoComponent } from './pages/plataforma/compra-invitado/compra-invitado.component';
+import { LoginComponent } from './pages/Auth/login/login.component';
 
 
 export const routes: Routes = [
+    { path: 'login', component: LoginComponent },
     { path: 'plataforma', component: PlataformaComponent, children: [
         { path: '', redirectTo: 'contenido', pathMatch: 'full' },
         { path: 'contenido', component: ContenidoComponent },
