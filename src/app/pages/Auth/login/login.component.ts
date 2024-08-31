@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -12,8 +12,16 @@ import { RouterLink } from '@angular/router';
 export class LoginComponent {
   correoElectronico: string = "";
   contrasena: string = "";
+  private correo: string = 'gustavo@gmail.com';
+  private contraseña: string = 'xd';
+  
+  router = inject(Router)
 
-  mostrar(){
-    console.log("Correo: ", this.correoElectronico, "\nContraseña: ", this.contrasena)
+  iniciarSesion(): void {
+    if (this.correoElectronico === this.correo && this.contrasena === this.contraseña) {
+      this.router.navigate(['/plataforma/contenido']);
+    } else {
+      alert('Correo electrónico o contraseña incorrectos.');
+    }
   }
 }
