@@ -12,7 +12,7 @@ export class CarritoService {
     let encontrado = false;
 
     this.carrito.forEach(i => {
-      if (i.producto.id == producto.id) {
+      if (i.producto.productoID == producto.productoID) {
         i.cantidad += cantidad;
         encontrado = true;
       }
@@ -43,13 +43,13 @@ export class CarritoService {
   }
 
   eliminarProducto(producto: Producto): void {
-    this.carrito = this.carrito.filter(item => item.producto.id !== producto.id);
+    this.carrito = this.carrito.filter(item => item.producto.productoID !== producto.productoID);
 
   }
 
   aumentarCantidadProducto(producto: Producto): void {
     this.obtenerCarrito().forEach(item => {
-      if (item.producto.id === producto.id) {
+      if (item.producto.productoID === producto.productoID) {
         item.cantidad++
       }
     })
@@ -57,11 +57,11 @@ export class CarritoService {
 
   disminuirCantidadProducto(producto: Producto): void {
     this.obtenerCarrito().forEach(item => {
-      if (item.producto.id === producto.id) {
+      if (item.producto.productoID === producto.productoID) {
         item.cantidad--
       }
       if (item.cantidad === 0) {
-        this.carrito = this.carrito.filter(item => item.producto.id !== producto.id);
+        this.carrito = this.carrito.filter(item => item.producto.productoID !== producto.productoID);
       }
     })
   }
