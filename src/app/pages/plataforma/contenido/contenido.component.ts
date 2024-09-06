@@ -20,6 +20,7 @@ export class ContenidoComponent {
 
   public dialog = inject(MatDialog)
   carrito = inject(CarritoService)
+  linkImgProductos:string = "assets/"
 
   productos: Producto[] = [
     {
@@ -31,7 +32,7 @@ export class ContenidoComponent {
       precioPromocion: 2699,
       stock: 25,
       categoriaID: 2,
-      urlImagen: 'assets/GamingLaptop.png',
+      urlImagen: this.linkImgProductos+'GamingLaptop.png',
     },
     {
       productoID: 2,
@@ -42,7 +43,7 @@ export class ContenidoComponent {
       precioPromocion: 3099,
       stock: 18,
       categoriaID: 2,
-      urlImagen: 'assets/HPOmen15.jpg',
+      urlImagen: this.linkImgProductos+'HPOmen15.jpg',
     },
     {
       productoID: 3,
@@ -53,7 +54,7 @@ export class ContenidoComponent {
       precioPromocion: 2599,
       stock: 22,
       categoriaID: 2,
-      urlImagen: 'assets/DellG5.jpg',
+      urlImagen: this.linkImgProductos+'DellG5.jpg',
     },
     {
       productoID: 4,
@@ -64,7 +65,7 @@ export class ContenidoComponent {
       precioPromocion: 3299,
       stock: 30,
       categoriaID: 2,
-      urlImagen: 'assets/ASUSROG.jpg',
+      urlImagen: this.linkImgProductos+'ASUSROG.jpg',
     },
     {
       productoID: 5,
@@ -75,7 +76,7 @@ export class ContenidoComponent {
       precioPromocion: 2799,
       stock: 27,
       categoriaID: 2,
-      urlImagen: 'assets/AcerPredator.jpg',
+      urlImagen: this.linkImgProductos+'AcerPredator.jpg',
     },
     {
       productoID: 6,
@@ -86,7 +87,7 @@ export class ContenidoComponent {
       precioPromocion: 899,
       stock: 35,
       categoriaID: 2,
-      urlImagen: 'assets/HP-Pavilion.jpg',
+      urlImagen: this.linkImgProductos+'HP-Pavilion.jpg',
     },
     {
       productoID: 7,
@@ -97,7 +98,7 @@ export class ContenidoComponent {
       precioPromocion: 1299,
       stock: 40,
       categoriaID: 2,
-      urlImagen: 'assets/Lenovo_ThinkPad.jpg',
+      urlImagen: this.linkImgProductos+'Lenovo_ThinkPad.jpg',
     },
     {
       productoID: 8,
@@ -108,7 +109,7 @@ export class ContenidoComponent {
       precioPromocion: 3799,
       stock: 45,
       categoriaID: 2,
-      urlImagen: 'assets/MSI_GE76_Raider.jpg',
+      urlImagen: this.linkImgProductos+'MSI_GE76_Raider.jpg',
     },
     {
       productoID: 9,
@@ -119,7 +120,7 @@ export class ContenidoComponent {
       precioPromocion: 3099,
       stock: 20,
       categoriaID: 2,
-      urlImagen: 'assets/Razer_Blade_15.jpg',
+      urlImagen: this.linkImgProductos+'Razer_Blade_15.jpg',
     },
     {
       productoID: 10,
@@ -130,7 +131,7 @@ export class ContenidoComponent {
       precioPromocion: 2399,
       stock: 12,
       categoriaID: 2,
-      urlImagen: 'assets/Apple_MacBook_Pro.png',
+      urlImagen: this.linkImgProductos+'Apple_MacBook_Pro.png',
     }
   ];
   

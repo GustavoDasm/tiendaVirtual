@@ -7,10 +7,12 @@ import { PasarelaPagosComponent } from './pages/plataforma/pasarela-pagos/pasare
 import { CompraInvitadoComponent } from './pages/plataforma/compra-invitado/compra-invitado.component';
 import { LoginComponent } from './pages/Auth/login/login.component';
 import { DetallesProductoComponent } from './pages/plataforma/detalles-producto/detalles-producto.component';
+import { RegistroUsuarioComponent } from './pages/Auth/registro-usuario/registro-usuario.component';
 
 
 export const routes: Routes = [
     { path: 'login', component: LoginComponent },
+    { path: 'registro-usuario', component: RegistroUsuarioComponent },
     { path: 'plataforma', component: PlataformaComponent, children: [
         { path: '', redirectTo: 'contenido', pathMatch: 'full' },
         { path: 'contenido', component: ContenidoComponent },

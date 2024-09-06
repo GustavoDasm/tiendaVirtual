@@ -15,26 +15,26 @@ export class ProductoService {
   constructor() { }
 
   listarProductos(){
-    return this.http.get<Producto>(this.apiURL);
+    return this.http.get<Producto>(`${this.apiURL}/GetAllProductos`);
   }
 
   obtenerProductoID(id: number){
-    return this.http.get<Producto>(`${this.apiURL}/${id}`);
+    return this.http.get<Producto>(`${this.apiURL}/GetProductosID/${id}`);
   }
 
   obtenerProductoNombre(nombre: string){
-    return this.http.get<Producto>(`${this.apiURL}/${nombre}`);
+    return this.http.get<Producto>(`${this.apiURL}/GetProductosNombre/${nombre}`);
   }
 
   crearProducto(producto: Producto){
-    return this.http.post<ResponseAPI>(this.apiURL,producto);
+    return this.http.post<ResponseAPI>(`${this.apiURL}/PostProducto`,producto);
   }
 
   actualizarProducto(producto: Producto){
-    return this.http.put<ResponseAPI>(this.apiURL,producto);
+    return this.http.put<ResponseAPI>(`${this.apiURL}/PutProducto`,producto);
   }
 
   eliminarProducto(id: number){
-    return this.http.delete<ResponseAPI>(`${this.apiURL}/${id}`);
+    return this.http.delete<ResponseAPI>(`${this.apiURL}/DeleteProducto/${id}`);
   }
 }

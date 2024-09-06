@@ -20,7 +20,7 @@ export class DetallesProductoComponent {
   obtenerEmpleados(){
     this.productosService.listarProductos().subscribe({
       next: (data) => {
-        if (Array.isArray(data) && 1 > 0) {
+        if (Array.isArray(data)) {
           this.listaProductos = data;
           console.log(this.listaProductos)
         }
