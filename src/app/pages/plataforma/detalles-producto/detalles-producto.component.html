@@ -1,1 +1,7 @@
-<p>detalles-producto works!</p>
+@for(productos of listaProductos; track productos){
+    <p>{{productos.nombreProducto}}</p>
+    <p>{{productos.descripcion}}</p>
+    <p>{{productos.precio}}</p>
+    <img src="{{productos.urlImagen}}">
+    <p>{{productos.stock}}</p>
+}

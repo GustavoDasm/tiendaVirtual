@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { ProductoService } from '../../../services/producto.service';
+import { Producto } from '../../../interfaces/producto';
 
 @Component({
   selector: 'app-detalles-producto',
@@ -8,5 +10,24 @@ import { Component } from '@angular/core';
   styleUrl: './detalles-producto.component.css'
 })
 export class DetallesProductoComponent {
+  productosService = inject(ProductoService)
+  public listaProductos: Producto[] = [];
 
+  constructor(){
+    this.obtenerEmpleados();
+  }
+
+  obtenerEmpleados(){
+    this.productosService.listarProductos().subscribe({
+      next: (data) => {
+        if (Array.isArray(data) && 1 > 0) {
+          this.listaProductos = data;
+          console.log(this.listaProductos)
+        }
+      },
+      error: (err) => {
+        console.log(err.message);
+      }
+    });
+  }
 }
