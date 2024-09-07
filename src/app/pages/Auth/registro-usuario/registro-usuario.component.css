@@ -1,0 +1,11 @@
+.logo{
+    width: 40px;
+    height: 40px;
+}
+
+.titulo-logo{
+    font-family: "Kaushan Script", sans-serif, Arial;
+    font-weight: 400;
+    font-style: normal;
+    transition: text-shadow 0.3s ease;
+}

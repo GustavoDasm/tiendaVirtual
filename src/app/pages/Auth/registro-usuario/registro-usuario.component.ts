@@ -19,6 +19,4 @@ export class RegistroUsuarioComponent {
   telefono: string = "";
   /* private correo: string = 'gustavo@gmail.com';
   private contraseña: string = 'xd'; */
-  
-  router = inject(Router)
 }
