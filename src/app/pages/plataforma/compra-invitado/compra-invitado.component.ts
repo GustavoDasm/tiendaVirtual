@@ -3,7 +3,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import { CarritoService } from '../../../services/carrito.service';
 import { FormsModule } from '@angular/forms';
-import { Invitado } from '../../../interfaces/invitado';
+import { Usuario } from '../../../interfaces/usuario';
 import { ContenidoComponent } from '../contenido/contenido.component';
 import { RouterLink } from '@angular/router';
 
@@ -17,10 +17,10 @@ import { RouterLink } from '@angular/router';
 export class CompraInvitadoComponent {
   formulario: boolean = false;
   carritoService = inject(CarritoService);
-  invitado: Invitado = {} as Invitado;
+  usuario: Usuario = {} as Usuario;
 
   verificarForm(): void{
-    console.log(this.invitado)
+    console.log(this.usuario)
     this.formulario = true
   }
 }

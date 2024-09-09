@@ -2,6 +2,7 @@ import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 import { Router } from 'express';
+import { Usuario } from '../../../interfaces/usuario';
 
 @Component({
   selector: 'app-registro-usuario',
@@ -11,12 +12,7 @@ import { Router } from 'express';
   styleUrl: './registro-usuario.component.css'
 })
 export class RegistroUsuarioComponent {
-  nombreUsuario: string = "";
-  password: string = "";
-  correoElectronico: string = "";
-  nombres: string = "";
-  apellidos: string = "";
-  telefono: string = "";
+  usuario: Usuario = {} as Usuario;
   /* private correo: string = 'gustavo@gmail.com';
   private contraseña: string = 'xd'; */
 }
