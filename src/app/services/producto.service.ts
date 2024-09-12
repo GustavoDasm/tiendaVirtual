@@ -10,7 +10,7 @@ import { ResponseAPI } from '../interfaces/responseAPI';
 export class ProductoService {
 
   private http = inject(HttpClient)
-  private apiURL: string = appSetting.apiURL + "Producto"
+  private apiURL: string = appSetting.apiURL + "Productos"
 
   constructor() { }
 
