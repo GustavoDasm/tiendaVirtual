@@ -4,6 +4,8 @@ import { MatDialog } from '@angular/material/dialog';
 import { CarritoService } from '../../../services/carrito.service';
 import { DetallesProductoModalComponent } from '../detalles-producto-modal/detalles-producto-modal.component';
 import { BarraLateralComponent } from '../barra-lateral/barra-lateral.component';
+import { ProductoService } from '../../../services/producto.service';
+import { RouterLink } from '@angular/router';
 
 
 
@@ -11,7 +13,7 @@ import { BarraLateralComponent } from '../barra-lateral/barra-lateral.component'
 @Component({
   selector: 'app-contenido',
   standalone: true,
-  imports: [BarraLateralComponent],
+  imports: [BarraLateralComponent, RouterLink],
   templateUrl: './contenido.component.html',
   styleUrl: './contenido.component.css'
 })
@@ -19,10 +21,11 @@ import { BarraLateralComponent } from '../barra-lateral/barra-lateral.component'
 export class ContenidoComponent {
 
   public dialog = inject(MatDialog)
-  carrito = inject(CarritoService)
-  linkImgProductos:string = "assets/"
+  carritoService = inject(CarritoService)
+  productosService = inject(ProductoService)
+  listaProductos: Producto[] = [];
 
-  productos: Producto[] = [
+  /* productos: Producto[] = [
     {
       productoID: 1,
       codigo: 'LNV-2024-001',
@@ -133,9 +136,25 @@ export class ContenidoComponent {
       categoriaID: 2,
       urlImagen: this.linkImgProductos+'Apple_MacBook_Pro.png',
     }
-  ];
+  ]; */
   
+  constructor(){
+    this.obtenerProductos();
+  }
 
+  obtenerProductos(){
+    this.productosService.listarProductos().subscribe({
+      next: (data) => {
+        if (Array.isArray(data)) {
+          this.listaProductos = data;
+          console.log(this.listaProductos)
+        }
+      },
+      error: (err) => {
+        console.log(err.message);
+      }
+    });
+  }
 
   abrirModalDetallesProducto(producto: Producto) {
     this.dialog.open(DetallesProductoModalComponent, {
@@ -145,7 +164,7 @@ export class ContenidoComponent {
   }
 
   agregarAlCarrito(producto: Producto): void {
-    this.carrito.agregarProducto(producto);
-    alert("Producto " + producto.nombreProducto + " agregado al carrito");
+    this.carritoService.agregarProducto(producto);
+    alert("Producto " + producto.nombre + " agregado al carrito");
   }
 }

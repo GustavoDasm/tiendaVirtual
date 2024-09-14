@@ -28,7 +28,7 @@
                 @for(producto of carritoService.obtenerCarrito(); track producto; let i = $index){
                     <div class="row mt-3 pb-3 border-bottom ">
                         <div class="col text-center">
-                            <img class="img-fluid" src="{{producto.producto.urlImagen}}" alt="{{producto.producto.nombreProducto}}">
+                            <img class="img-fluid" src="assets/{{producto.producto.urlImagen}}" alt="{{producto.producto.nombre}}">
                         </div>
                         <div class="col">
                             <strong>

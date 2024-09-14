@@ -3,12 +3,13 @@ import { Producto } from '../../../interfaces/producto';
 import { CarritoService } from '../../../services/carrito.service';
 import { Carrito } from '../../../interfaces/carrito';
 import { RouterLink } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 
 @Component({
   selector: 'app-barra-navegacion',
   standalone: true,
-  imports: [RouterLink],
+  imports: [RouterLink, FormsModule],
   templateUrl: './barra-navegacion.component.html',
   styleUrl: './barra-navegacion.component.css'
 })
@@ -18,11 +19,16 @@ export class BarraNavegacionComponent implements OnInit{
   carritoService = inject(CarritoService)
   precioTotal: number = 0;
   cantidadTotal: number = 0;
+  buscarProducto: string = "";
 
   ngOnInit(): void {
   }
 
   constructor(){  
+  }
+
+  buscarProductoPorNombre(){
+    console.log(this.buscarProducto);
   }
 
   carritoVacio(): boolean{

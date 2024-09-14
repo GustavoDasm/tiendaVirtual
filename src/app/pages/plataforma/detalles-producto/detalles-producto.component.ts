@@ -11,13 +11,13 @@ import { Producto } from '../../../interfaces/producto';
 })
 export class DetallesProductoComponent {
   productosService = inject(ProductoService)
-  public listaProductos: Producto[] = [];
+  listaProductos: Producto[] = [];
 
   constructor(){
-    this.obtenerEmpleados();
+    this.obtenerProductos();
   }
 
-  obtenerEmpleados(){
+  obtenerProductos(){
     this.productosService.listarProductos().subscribe({
       next: (data) => {
         if (Array.isArray(data)) {
@@ -30,4 +30,6 @@ export class DetallesProductoComponent {
       }
     });
   }
+
+  
 }

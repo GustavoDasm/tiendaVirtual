@@ -5,16 +5,16 @@
     </div>
     <div class="d-flex flex-column align-items-center">
         <div class="p-5"> 
-            <img class="" src="{{producto.urlImagen}}" alt="">
+            <img class="" src="assets/{{producto.urlImagen}}" alt="">
         </div>
 
         <div>
-            <h5>{{producto.nombreProducto}}</h5>
+            <h5>{{producto.nombre}}</h5>
             <p>SKU: {{producto.codigo}}</p>
             <p><strong>Descripción</strong></p>
             <p>{{producto.descripcion}}</p>
             <p class="text-dark"><strong>Antes: <del>S/{{producto.precio}}</del></strong></p>
-            <p><strong></strong>Oferta: <span class="text-danger">S/{{producto.precioPromocion}}</span></p>
+            <p><strong>Oferta: <span class="text-danger">S/{{producto.precioPromocion}}</span></strong></p>
         </div>
 
     </div>
