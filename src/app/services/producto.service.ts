@@ -12,6 +12,7 @@ export class ProductoService {
   private http = inject(HttpClient)
   private apiURL: string = appSetting.apiURL + "Productos"
   
+  
   constructor() { }
 
   listarProductos(){

@@ -4,6 +4,7 @@ import { CarritoService } from '../../../services/carrito.service';
 import { Carrito } from '../../../interfaces/carrito';
 import { RouterLink } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { ProductoService } from '../../../services/producto.service';
 
 
 @Component({
@@ -17,6 +18,7 @@ export class BarraNavegacionComponent implements OnInit{
   frase: string = "Donde la imaginación se convierte en código y cada línea construye un nuevo mundo"
   productosCarrito: Carrito[] = [];
   carritoService = inject(CarritoService)
+  productoService = inject(ProductoService)
   precioTotal: number = 0;
   cantidadTotal: number = 0;
   buscarProducto: string = "";
@@ -28,7 +30,7 @@ export class BarraNavegacionComponent implements OnInit{
   }
 
   buscarProductoPorNombre(){
-    console.log(this.buscarProducto);
+    this.productoService.obtenerProductoNombre(this.buscarProducto);
   }
 
   carritoVacio(): boolean{
