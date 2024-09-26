@@ -1,7 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
-import { Router } from 'express';
 import { Usuario } from '../../../interfaces/usuario';
 
 @Component({

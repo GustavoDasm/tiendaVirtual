@@ -1,22 +1,22 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
-import { appSetting } from '../settings/appSettings';
+import { appSetting } from '../environments/appSettings';
 import { Producto } from '../interfaces/producto';
 import { ResponseAPI } from '../interfaces/responseAPI';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductoService {
 
-  private http = inject(HttpClient)
   private apiURL: string = appSetting.apiURL + "Productos"
   
-  
-  constructor() { }
+  constructor(private http:HttpClient) { }
 
-  listarProductos(){
-    return this.http.get<Producto>(`${this.apiURL}/GetAllProductos`);
+  //Signal --------- Observable
+  listarProductos(): Observable<Producto[]>{
+    return this.http.get<Producto[]>(`${this.apiURL}/GetAllProductos`);
   }
 
   obtenerProductoID(id: number){
