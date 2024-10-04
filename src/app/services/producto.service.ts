@@ -15,16 +15,24 @@ export class ProductoService {
   constructor(private http:HttpClient) { }
 
   //Signal --------- Observable
+  //Service en cada componente...
+/*   Observable permite manejar operaciones asincronas
+Signal
+
+.pipe para los errores
+.subscribe para subscribir los datos de los observables */
+
+
   listarProductos(): Observable<Producto[]>{
     return this.http.get<Producto[]>(`${this.apiURL}/GetAllProductos`);
   }
 
-  obtenerProductoID(id: number){
-    return this.http.get<Producto>(`${this.apiURL}/GetProductosID/${id}`);
+  obtenerProductoID(id: number): Observable<Producto[]>{
+    return this.http.get<Producto[]>(`${this.apiURL}/GetProductosID/${id}`);
   }
 
-  obtenerProductoNombre(nombre: string){
-    return this.http.get<Producto>(`${this.apiURL}/GetProductosNombre/${nombre}`);
+  obtenerProductoNombre(nombre: string):Observable<Producto[]>{
+    return this.http.get<Producto[]>(`${this.apiURL}/GetProductosNombre/${nombre}`);
   }
 
   crearProducto(producto: Producto){

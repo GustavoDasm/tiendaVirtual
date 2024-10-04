@@ -5,6 +5,8 @@ import { Carrito } from '../../../interfaces/carrito';
 import { RouterLink } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { ProductoService } from '../../../services/producto.service';
+import { BarraNavService } from './barra-nav.service';
+import { ContenidoService } from '../contenido/contenido.service';
 
 
 @Component({
@@ -19,9 +21,11 @@ export class BarraNavegacionComponent implements OnInit{
   productosCarrito: Carrito[] = [];
   carritoService = inject(CarritoService)
   productoService = inject(ProductoService)
+  barraNavService = inject(BarraNavService)
+  contenidoService = inject(ContenidoService)
   precioTotal: number = 0;
   cantidadTotal: number = 0;
-  buscarProducto: string = "";
+  nombreP: string = ""
 
   ngOnInit(): void {
   }
@@ -29,8 +33,9 @@ export class BarraNavegacionComponent implements OnInit{
   constructor(){  
   }
 
-  buscarProductoPorNombre(){
-    this.productoService.obtenerProductoNombre(this.buscarProducto);
+  buscarProducto() {
+    this.barraNavService.setNombre(this.nombreP); // Actualiza el nombre en el servicio
+    this.contenidoService.obtenerProductoPorNombre(this.nombreP);
   }
 
   carritoVacio(): boolean{
