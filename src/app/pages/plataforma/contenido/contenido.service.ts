@@ -1,6 +1,5 @@
 import { inject, Injectable } from '@angular/core';
 import { Producto } from '../../../interfaces/producto';
-import { BarraNavService } from '../barra-navegacion/barra-nav.service';
 import { ProductoService } from '../../../services/producto.service';
 
 @Injectable({
@@ -8,9 +7,10 @@ import { ProductoService } from '../../../services/producto.service';
 })
 export class ContenidoService {
   listaProductos: Producto[] = [];
-  barraNavService = inject(BarraNavService)
   productosService = inject(ProductoService)
-  constructor() { }
+  constructor() {
+    
+  }
 
   obtenerProductos(){
     this.productosService.listarProductos().subscribe({
@@ -26,10 +26,6 @@ export class ContenidoService {
     });
   }
 
-  mostrarNombre(){
-    console.log(this.barraNavService.nombre())
-  }
-
   obtenerProductoPorNombre(nombre: string){
     this.productosService.obtenerProductoNombre(nombre).subscribe({
       next: (data) => {
@@ -42,5 +38,19 @@ export class ContenidoService {
         console.log(err.message);
       }
     });
+  }
+
+  obtenerProductosPorPrecioAscDesc(orden: string){
+    this.productosService.obtenerProductoPorOrdenPrecio(orden).subscribe({
+      next: (data) => {
+        if(Array.isArray(data)){
+          this.listaProductos = data;
+          console.log(this.listaProductos)
+        }
+      },
+      error: (err) => {
+        console.log(err.message)
+      } 
+    })
   }
 }
