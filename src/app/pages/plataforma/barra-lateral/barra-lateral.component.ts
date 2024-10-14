@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { ContenidoService } from '../contenido/contenido.service';
 
 @Component({
   selector: 'app-barra-lateral',
@@ -8,5 +9,5 @@ import { Component } from '@angular/core';
   styleUrl: './barra-lateral.component.css'
 })
 export class BarraLateralComponent {
-
+  service = inject(ContenidoService)
 }
