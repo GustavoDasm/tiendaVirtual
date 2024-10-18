@@ -31,6 +31,8 @@ Signal
     return this.http.get<Producto[]>(`${this.apiProductosURL}/GetProductosID/${id}`);
   }
 
+
+  //poner pipe para errores
   obtenerProductoNombre(nombre: string):Observable<Producto[]>{
     return this.http.get<Producto[]>(`${this.apiProductosURL}/GetProductosNombre/${nombre}`);
   }
