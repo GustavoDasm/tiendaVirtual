@@ -1,7 +1,7 @@
 <div class="bg-light p-4 d-flex">
   <app-barra-lateral></app-barra-lateral>
   <div class="contenedor">
-    @for(producto of contenidoService.listaProductos; track producto){
+    @for(producto of contenidoService.listaProductos; track producto.productoID){
     <div class="card border">
       <div class="container d-flex flex-column h-100">
         <div class="contenedor-img p-4 m-auto">
