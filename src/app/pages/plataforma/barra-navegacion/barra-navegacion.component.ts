@@ -31,8 +31,13 @@ export class BarraNavegacionComponent implements OnInit{
   constructor(){  
   }
 
+  limpiarBuscador(){
+    this.nombreP = ""
+  }
+
   buscarProducto() {
     this.contenidoService.obtenerProductoPorNombre(this.nombreP);
+    this.limpiarBuscador()
   }
 
   carritoVacio(): boolean{
