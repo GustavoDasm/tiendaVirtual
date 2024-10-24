@@ -11,7 +11,7 @@ import { RegistroUsuarioComponent } from './pages/Auth/registro-usuario/registro
 
 
 export const routes: Routes = [
-    { path: 'login', component: LoginComponent },
+    { path: '', component: LoginComponent },
     { path: 'registro-usuario', component: RegistroUsuarioComponent },
     { path: 'plataforma', component: PlataformaComponent, children: [
         { path: '', redirectTo: 'contenido', pathMatch: 'full' },

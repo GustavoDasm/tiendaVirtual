@@ -40,7 +40,7 @@ Signal
     return this.http.get<Producto[]>(`${this.apiProductosURL}/GetProductForPriceAscDesc?orden=${orden}`)
   } 
 
-  crearProducto(producto: Producto){
+  crearProducto(producto: Producto): Observable<ResponseAPI>{
     return this.http.post<ResponseAPI>(`${this.apiProductosURL}/PostProducto`,producto);
   }
 
