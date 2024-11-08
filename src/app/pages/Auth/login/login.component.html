@@ -4,18 +4,18 @@
       <div class="col col-xl-10">
         <div class="card" style="border-radius: 1rem;">
           <div class="row g-0">
-            <div class="col-md-6 col-lg-5 d-none d-md-block m-auto">
+            <div class="col-md-6 d-none d-md-block m-auto">
               <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.svg" alt="logo"
                 class="img-fluid" style="border-radius: 1rem 0 0 1rem;" />
             </div>
-            <div class="col-md-6 col-lg-7 d-flex align-items-center">
+            <div class="col-md-6 d-flex align-items-center">
               <div class="card-body p-4 p-lg-5 text-black">
                 <form class="form-custom" [formGroup]="formLogin" (ngSubmit)="iniciarSesion()">
                   <div class="d-flex align-items-center mb-3 pb-1">
                     <img class="logo img-fluid" src="assets/logo.png" alt="">
                     <h6 class="titulo-logo m-0 px-2">CodeCrafters DG</h6>
                   </div>
-                  <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Inicia sesión en tu cuenta</h5>
+                  <h6 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Inicia sesión en tu cuenta</h6>
                   <div data-mdb-input-init class="form-outline mb-4">
                     <input name="correo" type="email" id="formCorreo"
                       class="form-control form-control-lg" formControlName="correo" />
