@@ -23,4 +23,11 @@ export class CompraInvitadoComponent {
     console.log(this.usuario)
     this.formulario = true
   }
+
+  notaPedido(): void{
+    console.log(`Id usuario: ${this.usuario.nombreUsuario}\nTotal: ${this.carritoService.obtenerCantidadTotal()}\n`)
+    for(let i = 0; i < this.carritoService.carrito.length; i++){
+      console.log(`Nombre: ${this.carritoService.carrito[i].producto.nombre}\nCantidad: hacer en casa v:`)
+    }
+  }
 }

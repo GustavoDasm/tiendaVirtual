@@ -6,7 +6,7 @@ import { Carrito } from '../interfaces/carrito';
   providedIn: 'root'
 })
 export class CarritoService {
-  private carrito: Carrito[] = [];
+  public carrito: Carrito[] = [];
 
   agregarProducto(producto: Producto, cantidad: number = 1): void {
     let encontrado = false;

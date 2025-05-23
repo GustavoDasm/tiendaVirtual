@@ -11,8 +11,8 @@ import { Observable } from 'rxjs';
 
 export class ProductoService {
 
-  private apiURL: string = appSetting.apiURL + "Productos"
-  
+  private apiURL: string = appSetting.apiURL
+  private apiProductosURL: string = this.apiURL + "Productos"
   constructor(private http:HttpClient) { }
 
   //Signal --------- Observable
@@ -25,30 +25,31 @@ Signal
 
 
   listarProductos(): Observable<Producto[]>{
-    return this.http.get<Producto[]>(`${this.apiURL}/GetAllProductos`);
+    return this.http.get<Producto[]>(`${this.apiProductosURL}/GetAllProductos`);
   }
 
   obtenerProductoID(id: number): Observable<Producto[]>{
-    return this.http.get<Producto[]>(`${this.apiURL}/GetProductosID/${id}`);
+    return this.http.get<Producto[]>(`${this.apiProductosURL}/GetProductosID/${id}`);
   }
 
+  //poner pipe para errores
   obtenerProductoNombre(nombre: string):Observable<Producto[]>{
-    return this.http.get<Producto[]>(`${this.apiURL}/GetProductosNombre/${nombre}`);
+    return this.http.get<Producto[]>(`${this.apiProductosURL}/GetProductosNombre/${nombre}`);
   }
 
-/*   obtenerProductoPrecio(orden: string): Observable<Producto[]>{
-    return this.http.get<Producto[]>()
-  } */
+  obtenerProductoPorOrdenPrecio(orden: string): Observable<Producto[]>{
+    return this.http.get<Producto[]>(`${this.apiProductosURL}/GetProductForPriceAscDesc?orden=${orden}`)
+  } 
 
-  crearProducto(producto: Producto){
-    return this.http.post<ResponseAPI>(`${this.apiURL}/PostProducto`,producto);
+  crearProducto(producto: Producto): Observable<ResponseAPI>{
+    return this.http.post<ResponseAPI>(`${this.apiProductosURL}/PostProducto`,producto);
   }
 
   actualizarProducto(producto: Producto){
-    return this.http.put<ResponseAPI>(`${this.apiURL}/PutProducto`,producto);
+    return this.http.put<ResponseAPI>(`${this.apiProductosURL}/PutProducto`,producto);
   }
 
   eliminarProducto(id: number){
-    return this.http.delete<ResponseAPI>(`${this.apiURL}/DeleteProducto/${id}`);
+    return this.http.delete<ResponseAPI>(`${this.apiProductosURL}/DeleteProducto/${id}`);
   }
 }

@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CompraInvitadoComponent } from './compra-invitado.component';
+import { PlataformaAdmComponent } from './plataforma-adm.component';
 
-describe('CompraInvitadoComponent', () => {
-  let component: CompraInvitadoComponent;
-  let fixture: ComponentFixture<CompraInvitadoComponent>;
+describe('PlataformaAdmComponent', () => {
+  let component: PlataformaAdmComponent;
+  let fixture: ComponentFixture<PlataformaAdmComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [CompraInvitadoComponent]
+      imports: [PlataformaAdmComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(CompraInvitadoComponent);
+    fixture = TestBed.createComponent(PlataformaAdmComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

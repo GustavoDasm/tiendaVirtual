@@ -4,9 +4,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { CarritoService } from '../../../services/carrito.service';
 import { DetallesProductoModalComponent } from '../detalles-producto-modal/detalles-producto-modal.component';
 import { BarraLateralComponent } from '../barra-lateral/barra-lateral.component';
-import { ProductoService } from '../../../services/producto.service';
 import { RouterLink } from '@angular/router';
-import { BarraNavService } from '../barra-navegacion/barra-nav.service';
 import { ContenidoService } from './contenido.service';
 
 
@@ -26,16 +24,13 @@ export class ContenidoComponent {
   carritoService = inject(CarritoService)
   contenidoService = inject(ContenidoService)
 
-  
   constructor(){
-    
+   
   }
 
   ngOnInit() {
     this.contenidoService.obtenerProductos(); // Llamada inicial para obtener todos los productos
   }
-
-
 
   abrirModalDetallesProducto(producto: Producto) {
     this.dialog.open(DetallesProductoModalComponent, {

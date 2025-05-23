@@ -1,7 +1,7 @@
 <div>
     <section class="barra-lateral">
         <h6 class="text-secondary"><strong>TECNOLOGÍA</strong></h6>
-        <p class="text-secondary py-2">TOTAL: </p>
+        <p class="text-secondary py-2">TOTAL: {{service.listaProductos.length}}</p>
         <div class="accordion" id="accordionExample">
             <div class="accordion-item">
                 <h6 class="accordion-header" id="headingOne">
@@ -12,14 +12,21 @@
                 </h6>
                 <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
                     data-bs-parent="#accordionExample">
+                    @for(categoria of listaCategorias; track categoria){
+                        <div class="accordion-body text-secondary border-top">
+                            <p>{{categoria.nombre}}</p>
+                        </div>
+                    }
                     <div class="accordion-body text-secondary border-top">
-                        <p>COMPUTACIÓNa</p>
+                        <p>COMPUTACIÓN</p>
                     </div>
                     <div class="accordion-body text-secondary border-top">
                         <p>ELECTRÓNICA</p>
                     </div>
                     <div class="accordion-body text-secondary border-top">
                         <button class="btn text-secondary">ORDEN FOR PRICE</button>
+
+                        <button (click)="service.obtenerProductosPorPrecioAscDesc('asc')" class="btn text-secondary">ORDEN FOR PRICE</button>
                     </div>
                 </div>
             </div>
