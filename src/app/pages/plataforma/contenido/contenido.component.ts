@@ -11,11 +11,10 @@ import { ContenidoService } from './contenido.service';
 
 
 @Component({
-  selector: 'app-contenido',
-  standalone: true,
-  imports: [BarraLateralComponent, RouterLink],
-  templateUrl: './contenido.component.html',
-  styleUrl: './contenido.component.css'
+    selector: 'app-contenido',
+    imports: [BarraLateralComponent, RouterLink],
+    templateUrl: './contenido.component.html',
+    styleUrl: './contenido.component.css'
 })
 
 export class ContenidoComponent {
