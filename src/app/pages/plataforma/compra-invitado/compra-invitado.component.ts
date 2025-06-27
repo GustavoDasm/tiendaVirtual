@@ -8,11 +8,10 @@ import { ContenidoComponent } from '../contenido/contenido.component';
 import { RouterLink } from '@angular/router';
 
 @Component({
-  selector: 'app-compra-invitado',
-  standalone: true,
-  imports: [MatFormFieldModule, MatInputModule, FormsModule, ContenidoComponent, RouterLink],
-  templateUrl: './compra-invitado.component.html',
-  styleUrl: './compra-invitado.component.css'
+    selector: 'app-compra-invitado',
+    imports: [MatFormFieldModule, MatInputModule, FormsModule, ContenidoComponent, RouterLink],
+    templateUrl: './compra-invitado.component.html',
+    styleUrl: './compra-invitado.component.css'
 })
 export class CompraInvitadoComponent {
   formulario: boolean = false;

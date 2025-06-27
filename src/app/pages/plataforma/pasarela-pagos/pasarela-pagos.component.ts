@@ -6,11 +6,10 @@ import { CompraInvitadoComponent } from '../compra-invitado/compra-invitado.comp
 import { Producto } from '../../../interfaces/producto';
 
 @Component({
-  selector: 'app-pasarela-pagos',
-  standalone: true,
-  imports: [RouterLink, ContenidoComponent, CompraInvitadoComponent],
-  templateUrl: './pasarela-pagos.component.html',
-  styleUrl: './pasarela-pagos.component.css'
+    selector: 'app-pasarela-pagos',
+    imports: [RouterLink, ContenidoComponent, CompraInvitadoComponent],
+    templateUrl: './pasarela-pagos.component.html',
+    styleUrl: './pasarela-pagos.component.css'
 })
 export class PasarelaPagosComponent {
   carritoService = inject(CarritoService)

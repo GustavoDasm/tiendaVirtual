@@ -4,11 +4,10 @@ import { RouterLink } from '@angular/router';
 import { Usuario } from '../../../interfaces/usuario';
 
 @Component({
-  selector: 'app-registro-usuario',
-  standalone: true,
-  imports: [RouterLink, FormsModule],
-  templateUrl: './registro-usuario.component.html',
-  styleUrl: './registro-usuario.component.css'
+    selector: 'app-registro-usuario',
+    imports: [RouterLink, FormsModule],
+    templateUrl: './registro-usuario.component.html',
+    styleUrl: './registro-usuario.component.css'
 })
 export class RegistroUsuarioComponent {
   usuario: Usuario = {} as Usuario;

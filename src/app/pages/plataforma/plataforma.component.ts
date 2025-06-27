@@ -4,11 +4,10 @@ import { RouterOutlet } from '@angular/router';
 
 
 @Component({
-  selector: 'app-plataforma',
-  standalone: true,
-  imports: [BarraNavegacionComponent, RouterOutlet],
-  templateUrl: './plataforma.component.html',
-  styleUrl: './plataforma.component.css'
+    selector: 'app-plataforma',
+    imports: [BarraNavegacionComponent, RouterOutlet],
+    templateUrl: './plataforma.component.html',
+    styleUrl: './plataforma.component.css'
 })
 export class PlataformaComponent {
   

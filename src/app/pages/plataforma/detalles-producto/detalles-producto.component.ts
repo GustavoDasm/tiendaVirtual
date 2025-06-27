@@ -3,11 +3,10 @@ import { ProductoService } from '../../../services/producto.service';
 import { Producto } from '../../../interfaces/producto';
 
 @Component({
-  selector: 'app-detalles-producto',
-  standalone: true,
-  imports: [],
-  templateUrl: './detalles-producto.component.html',
-  styleUrl: './detalles-producto.component.css'
+    selector: 'app-detalles-producto',
+    imports: [],
+    templateUrl: './detalles-producto.component.html',
+    styleUrl: './detalles-producto.component.css'
 })
 export class DetallesProductoComponent {
   productosService = inject(ProductoService)

@@ -9,11 +9,10 @@ import { ContenidoService } from '../contenido/contenido.service';
 
 
 @Component({
-  selector: 'app-barra-navegacion',
-  standalone: true,
-  imports: [RouterLink, FormsModule],
-  templateUrl: './barra-navegacion.component.html',
-  styleUrl: './barra-navegacion.component.css'
+    selector: 'app-barra-navegacion',
+    imports: [RouterLink, FormsModule],
+    templateUrl: './barra-navegacion.component.html',
+    styleUrl: './barra-navegacion.component.css'
 })
 export class BarraNavegacionComponent implements OnInit{
   frase: string = "Donde la imaginación se convierte en código y cada línea construye un nuevo mundo"

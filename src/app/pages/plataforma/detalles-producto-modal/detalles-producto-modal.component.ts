@@ -5,11 +5,10 @@ import { Producto } from '../../../interfaces/producto';
 
 
 @Component({
-  selector: 'app-detalles-producto',
-  standalone: true,
-  imports: [BarraNavegacionComponent],
-  templateUrl: './detalles-producto-modal.component.html',
-  styleUrl: './detalles-producto-modal.component.css'
+    selector: 'app-detalles-producto',
+    imports: [BarraNavegacionComponent],
+    templateUrl: './detalles-producto-modal.component.html',
+    styleUrl: './detalles-producto-modal.component.css'
 })
 export class DetallesProductoModalComponent {
   producto: Producto = {} as Producto;

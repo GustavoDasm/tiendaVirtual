@@ -5,11 +5,10 @@ import { AccesoService } from '../../../services/acceso.service';
 import { Login } from '../../../interfaces/login';
 
 @Component({
-  selector: 'app-login',
-  standalone: true,
-  imports: [RouterLink, ReactiveFormsModule],
-  templateUrl: './login.component.html',
-  styleUrl: './login.component.css'
+    selector: 'app-login',
+    imports: [RouterLink, ReactiveFormsModule],
+    templateUrl: './login.component.html',
+    styleUrl: './login.component.css'
 })
 export class LoginComponent {
   private accesoService = inject(AccesoService)
